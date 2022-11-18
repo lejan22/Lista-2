@@ -20,10 +20,7 @@ public class Exercise4 : MonoBehaviour
 
     private int CorrectOption; 
 
-    void Start()
-    {
-       
-    }
+    
     //PC will gladly choose one of the two options
     public void PcChoices() 
     {
@@ -38,12 +35,13 @@ public class Exercise4 : MonoBehaviour
 
     public void Choosing(int opt) 
     {
-        if (opt == PCschoice) //if we have chosen the same option we add 1 point of success
+        //Choosing the correct option will give us one point
+        if (opt == PCschoice) 
         {
             CorrectOption++;
         }
-
-        if (question < 9) //if the answer was not for the last question we can place the next two options on screen
+        //Next question when we chose one option, when we arrive to the last one we don't continue
+        if (question < 9) 
         {
             question++;
             PcChoices();
